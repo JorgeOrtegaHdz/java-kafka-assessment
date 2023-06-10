@@ -21,7 +21,7 @@ public class KafkaConsumerService {
     private ScanRepository scanRepository;
 
 
-    @KafkaListener(id = "scan-listener-spring", topics = "scan_topic", groupId = "scan_group", concurrency = "1")
+    @KafkaListener(id = "scan-listener-spring", topics = "scan_topic_v1", groupId = "scan_group", concurrency = "1")
     public void consumeScan(ConsumerRecord<String, String> record) {
         System.out.println("Received message. Key: " + record.key() + ", Value: " + record.value());
 

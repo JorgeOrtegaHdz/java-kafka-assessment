@@ -38,13 +38,11 @@ services:
     networks:
       - interview-network
   appjs:
-    build: ..
-    volumes:
-      - .:/app
+    build: .
     depends_on:
       - kafka
     environment:
-      KAFKA_BROKER: kafka:9092
+      KAFKA_BROKER: kafka:19092
     networks:
       - interview-network
   db:

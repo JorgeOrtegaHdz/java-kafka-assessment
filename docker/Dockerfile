@@ -2,10 +2,8 @@ FROM node:14-alpine
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY emitter/* ./
 
-RUN npm ci
-
-COPY .. .
+RUN npm install
 
 CMD ["npm", "start"]

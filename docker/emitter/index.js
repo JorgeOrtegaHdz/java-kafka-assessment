@@ -3,7 +3,7 @@ const {faker} = require('@faker-js/faker');
 
 const kafka = new Kafka({
     clientId: 'emitter-app',
-    brokers: ['localhost:9093']
+    brokers: [process.env.KAFKA_BROKER]
 });
 
 const topicNameV1 = 'scan_topic_v1';
